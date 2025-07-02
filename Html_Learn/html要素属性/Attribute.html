@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>属性のおさらいテスト</title>
+</head>
+<body>
+
+  <!-- ✅ IDは一意である必要がある。同じIDが複数あると最初の1つしか認識されない -->
+  <p id="myText">1つ目のID段落（取得される）</p>
+  <p id="myText">2つ目のID段落（無視される）</p>
+  <button onclick="document.getElementById('myText').textContent = 'これだけが修正された';">
+    上のテキストを修正する getElementByIdの戻り値は1つの要素
+  </button>
+
+  <!-- ✅ class属性：複数の要素に共通の名前をつける -->
+  <p class="info">class段落1</p>
+  <p class="info">class段落2</p>
+  <button onclick="changeAllTexts()">すべてのテキストを修正する getElementsByClassNameの戻り値は配列</button>
+  <script>
+    function changeAllTexts() {
+      let infos = document.getElementsByClassName("info"); // ← HTMLCollection（配列のようなもの）
+      for (let i = 0; i < infos.length; i++) {
+        infos[i].textContent = "すべて変更された段落 " + (i + 1);
+      }
+    }
+  </script>
+  
+
+  <!-- ✅ style属性：インラインスタイル（例：文字色と太字） -->
+  <p style="color: blue; font-weight: bold;">青くて太字のstyle</p>
+
+  <!-- ✅ title属性：ホバー時にヒントが表示される -->
+  <button title="おめでとう！">試しにホバーしてみてください</button>
+
+  <!-- ✅ 改行 -->
+  <br> <br>
+
+  <!-- ✅ hidden属性：最初は非表示になっている -->
+  <p id="hiddenText" hidden>このテキストは最初は非表示です</p>
+  <button onclick="document.getElementById('hiddenText').hidden = false;">
+    表示する
+  </button>
+  <button onclick="document.getElementById('hiddenText').hidden = true;">
+    非表示にする
+  </button>
+  <br> <br>
+
+  <!-- ✅ data-*属性：カスタムデータをHTMLに持たせる -->
+  <!-- ✅ 商品A・Bのボタン -->
+  <button onclick="showData('itemA')" id="itemA" data-id="1001" data-price="29.9">商品Aを表示</button><br>
+  <button onclick="showData('itemB')" id="itemB" data-id="1002" data-price="49.9">商品Bを表示</button>
+
+  <!-- ✅ 表示エリア -->
+  <p>商品のID：<span id="productId">--</span></p>
+  <p>商品の価格：<span id="productPrice">--</span></p>
+
+  <script>
+    // 引数で渡されたIDから商品データを表示
+    function showData(itemId) {
+      const item = document.getElementById(itemId);
+      const id = item.dataset.id;
+      const price = item.dataset.price;
+
+      document.getElementById("productId").textContent = id;
+      document.getElementById("productPrice").textContent = "¥" + price;
+    }
+  </script>
+
+</body>
+</html>

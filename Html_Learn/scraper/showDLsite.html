@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>DLsite作品一覧</title>
+    <style>
+        body { font-family: sans-serif; background: #f5f5f5; }
+        .card { display: inline-block; width: 200px; margin: 10px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #ccc; padding: 10px; vertical-align: top; }
+        .card img { width: 100%; border-radius: 4px; }
+        .card-title { font-size: 16px; font-weight: bold; margin: 8px 0; }
+        .card-link { color: #2196f3; text-decoration: none; }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+
+
+
+</head>
+<body>
+    <h1>DLsite作品一覧</h1>
+    <div id="list"></div>
+    <script>
+        fetch('result.json')
+            .then(res => res.json())
+            .then(data => {
+                const list = document.getElementById('list');
+                data.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.innerHTML = `
+                        <a href="${item.link}" target="_blank">
+                            <img src="${item.img_url}" alt="${item.title}">
+                        </a>
+                        <div class="card-title">${item.title}</div>
+                        <a class="card-link" href="${item.link}" target="_blank">作品ページへ</a>
+                    `;
+                    list.appendChild(card);
+                });
+            });
+    </script>
+</body>
+</html>

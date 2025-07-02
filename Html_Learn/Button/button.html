@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>我的第一个网页</title>
+</head>
+<body>
+
+  <h1 id="myText">你好，世界！</h1>
+  <p hidden>这段话不会显示</p>
+
+  <button id="myButton" onclick="changeText()">点击我改变文字</button>
+
+  <script>
+    function changeText() {
+      document.getElementById("myText").innerText = "你点击了按钮！";
+    }
+    //按钮绑定changeText()
+    //document 当前网页 getElementById("myText")搜索id为"myText"的元素 innerText 改变内容
+  </script>
+
+<p id="msg">你好，我是隐藏的</p>
+<button onclick="document.getElementById('msg').hidden = true;">显示内容</button>
+
+
+</body>
+</html>

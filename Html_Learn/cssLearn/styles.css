@@ -1,0 +1,272 @@
+/* #region 基本リセットと共通スタイル */
+/* ここでは全体のリセットと共通の基本スタイルを定義します */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+/* #endregion */
+
+/* #region レイアウト（コンテナ、メイン構造） */
+/* ページ全体のレイアウトやコンテナの設定 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+/* #endregion */
+
+/* #region ヘッダー */
+/* ヘッダー部分のスタイル */
+.header {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+    padding: 40px 0;
+}
+
+.header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+/* #endregion */
+
+/* #region ナビゲーション */
+/* ナビゲーションメニューのスタイル */
+.navigation {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.navigation a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+/* #endregion */
+
+/* #region メインコンテンツ */
+/* メインコンテンツ全体のレイアウト */
+.main-content {
+    display: grid;
+    gap: 40px;
+}
+
+.section {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.section:hover {
+    transform: translateY(-5px);
+}
+
+.section h2 {
+    color: #667eea;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 10px;
+}
+/* #endregion */
+
+/* #region デモカード・ボタン */
+/* デモ用カードやボタンのスタイル */
+.demo-card {
+    background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.demo-text {
+    font-size: 1.1rem;
+    margin: 20px 0;
+    line-height: 1.8;
+}
+
+.demo-button {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.demo-button:hover {
+    background: white;
+    color: #f5576c;
+    transform: scale(1.05);
+}
+/* #endregion */
+
+/* #region レイアウトデモ */
+/* レイアウトデモ用のグリッドやボックス */
+.layout-demo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 20px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.box:hover {
+    transform: rotate(5deg) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+/* #endregion */
+
+/* #region アニメーション */
+/* アニメーションデモやキーフレーム */
+.animation-demo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+.animated-element {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    color: white;
+    padding: 20px 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    animation: pulse 2s infinite;
+}
+
+.animated-element:hover {
+    transform: scale(1.2) rotate(360deg);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+/* #endregion */
+
+/* #region レスポンシブグリッド */
+/* レスポンシブ用のグリッドとアイテム */
+.responsive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.grid-item {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.grid-item:hover {
+    border-color: #667eea;
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+/* #endregion */
+
+/* #region レスポンシブデザイン */
+/* メディアクエリによるレスポンシブ対応 */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .navigation ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .section {
+        padding: 20px;
+    }
+    
+    .layout-demo {
+        grid-template-columns: 1fr;
+    }
+    
+    .responsive-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .header p {
+        font-size: 1rem;
+    }
+    
+    .section h2 {
+        font-size: 1.5rem;
+    }
+}
+/* #endregion */ 
