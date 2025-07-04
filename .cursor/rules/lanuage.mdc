@@ -1,0 +1,8 @@
+---
+description:
+rule for lanuage
+
+globs:
+alwaysApply: true
+---
+请永远使用日语进行注释

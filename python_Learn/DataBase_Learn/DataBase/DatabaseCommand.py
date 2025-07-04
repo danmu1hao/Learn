@@ -1,4 +1,13 @@
 import sqlite3
+
+#sql insert?
+def Connect_DataBase(dbName,command):
+    conn = sqlite3.connect(dbName)
+    cur = conn.cursor()
+    cur.execute(command)
+    conn.commit()
+    conn.close()
+
 def insert_people(name, age):
     conn = sqlite3.connect("CardData.db")
     cur = conn.cursor()
