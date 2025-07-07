@@ -1,29 +1,33 @@
 import sqlite3
+import os
+#sql insert防止?
+folder_path = os.path.dirname(__file__)
+db_path = os.path.join(folder_path, "CardData.db")
 
-#sql insert?
 def Connect_DataBase(dbName,command):
-    conn = sqlite3.connect(dbName)
+    path=folder_path+dbName
+    conn = sqlite3.connect(path)
     cur = conn.cursor()
     cur.execute(command)
     conn.commit()
     conn.close()
 
 def insert_people(name, age):
-    conn = sqlite3.connect("CardData.db")
+    conn = sqlite3.connect(db_path)
     cur = conn.cursor()
     cur.execute("INSERT INTO People (name, cardNum) VALUES (?, ?)", (name, age))
     conn.commit()
     conn.close()
 
 def delete_people(id):
-    conn = sqlite3.connect("CardData.db")
+    conn = sqlite3.connect(db_path)
     cur = conn.cursor()
     cur.execute("DELETE FROM People WHERE id = ?", (id,))
     conn.commit()
     conn.close()
 
 def select_people():
-    conn = sqlite3.connect("CardData.db")
+    conn = sqlite3.connect(db_path)
     cur = conn.cursor()
     cur.execute("SELECT * FROM People")
     rows = cur.fetchall()
@@ -31,7 +35,7 @@ def select_people():
     return rows
 
 def reset_ids():
-    conn = sqlite3.connect("CardData.db")
+    conn = sqlite3.connect(db_path)
     cur = conn.cursor()
 
     # 一時テーブルを作成（idを自動採番する）

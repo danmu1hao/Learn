@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+# python要求在方法的第一个变量显式写出self，显式优于隐式
 class AnimalInfo:
     def __init__(self, name, species, age, lifespan):
         self.name = name

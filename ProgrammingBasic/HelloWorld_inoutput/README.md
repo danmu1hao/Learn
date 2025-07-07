@@ -1,142 +1,146 @@
-# Hello World 八种语言对比
+# Hello World 多语言对比 / Hello World 多言語比較 / Hello World Multi-language Comparison
 
-这个项目展示了C、C++、C#、HTML、JavaScript、Python、Java和Go八种语言的Hello World程序，让你能够直观地看到它们之间的区别。
+---
 
-## 文件说明
+## 简介 / 概要 / Introduction
 
-### 编译型语言
-- `HelloWorld_c.c` - C语言版本
-- `HelloWorld_cpp.cpp` - C++版本  
-- `HelloWorld_cs.cs` - C#版本
-- `HelloWorld_java.java` - Java版本
-- `HelloWorld_go.go` - Go版本
+本项目展示了 C、C++、C#、HTML、JavaScript、Python、Java 七种语言的 Hello World 程序，方便直观比较各自的语法和特点。
 
-### 解释型语言
-- `HelloWorld_py.py` - Python版本
-- `HelloWorld_js.js` - JavaScript版本
+このプロジェクトは、C、C++、C#、HTML、JavaScript、Python、Java の7つの言語による Hello World プログラムを比較し、それぞれの構文や特徴を直感的に理解できるようにしています。
 
-### 标记语言
-- `index.html` - HTML版本
+This project demonstrates Hello World programs in C, C++, C#, HTML, JavaScript, Python, and Java, making it easy to compare their syntax and features.
 
-## 语言特点对比
+---
 
-### C语言 (HelloWorld_c.c)
-- **特点**: 过程式编程语言，最接近底层
-- **语法**: 使用`printf()`函数输出
-- **编译**: 需要C编译器（如gcc）
-- **复杂度**: 最简单，但功能有限
+## 文件说明 / ファイル説明 / File Descriptions
 
-### C++ (HelloWorld_cpp.cpp)
-- **特点**: 面向对象编程语言，C的超集
-- **语法**: 使用`std::cout`流操作符输出
-- **编译**: 需要C++编译器（如g++）
-- **复杂度**: 中等，支持面向对象特性
+- `HelloWorld_c.c`  
+  C语言 / C言語 / C: C语言版本
+- `HelloWorld_cpp.cpp`  
+  C++ / C++ / C++: C++版本
+- `HelloWorld_cs.cs`  
+  C# / C# / C#: C#版本
+- `HelloWorld_java.java`  
+  Java / Java / Java: Java版本
+- `HelloWorld_py.py`  
+  Python / Python / Python: Python版本
+- `HelloWorld_js.js`  
+  JavaScript / JavaScript / JavaScript: JavaScript版本
+- `index.html`  
+  HTML / HTML / HTML: HTML版本
 
-### C# (HelloWorld_cs.cs)
-- **特点**: 现代面向对象语言，.NET平台
-- **语法**: 使用`Console.WriteLine()`方法输出
-- **编译**: 需要.NET SDK
-- **复杂度**: 高，但语法现代化
+---
 
-### Java (HelloWorld_java.java)
-- **特点**: 面向对象，跨平台，"一次编写，到处运行"
-- **语法**: 使用`System.out.println()`方法输出
-- **编译**: 需要JDK，编译为字节码
-- **复杂度**: 高，需要完整的类结构
+## 语言特点对比 / 言語の特徴比較 / Language Features Comparison
 
-### Go (HelloWorld_go.go)
-- **特点**: 现代系统编程语言，Google开发
-- **语法**: 使用`fmt.Println()`函数输出
-- **编译**: 需要Go编译器
-- **复杂度**: 中等，语法简洁
+### C语言 / C言語 / C
+- 过程式编程，接近底层  
+- 手続き型プログラミング、低レベルに近い  
+- Procedural programming, close to low-level
 
-### Python (HelloWorld_py.py)
-- **特点**: 高级解释型语言，语法简洁
-- **语法**: 使用`print()`函数输出
-- **运行**: 需要Python解释器
-- **复杂度**: 最低，最易学习
+### C++
+- 面向对象，C的超集  
+- オブジェクト指向、Cの上位互換  
+- Object-oriented, superset of C
 
-### JavaScript (HelloWorld_js.js)
-- **特点**: 动态类型语言，主要用于Web开发
-- **语法**: 使用`console.log()`函数输出
-- **运行**: 需要Node.js或浏览器
-- **复杂度**: 低，但生态系统复杂
+### C#
+- 现代面向对象，.NET平台  
+- 近代的なオブジェクト指向、.NETプラットフォーム  
+- Modern OOP, .NET platform
 
-### HTML (index.html)
-- **特点**: 标记语言，用于网页结构
-- **语法**: 使用HTML标签和CSS样式
-- **运行**: 直接在浏览器中打开
-- **复杂度**: 最低，但功能有限
+### Java
+- 跨平台，面向对象  
+- クロスプラットフォーム、オブジェクト指向  
+- Cross-platform, object-oriented
 
-## 编译和运行
+### Python
+- 高级解释型，语法简洁  
+- 高水準インタプリタ、シンプルな構文  
+- High-level interpreted, simple syntax
 
-### C语言
+### JavaScript
+- 动态类型，Web开发主力  
+- 動的型付け、Web開発の主力  
+- Dynamic typing, main for web development
+
+### HTML
+- 标记语言，网页结构  
+- マークアップ言語、Webページ構造  
+- Markup language, web page structure
+
+---
+
+## 编译和运行 / コンパイルと実行 / Compile & Run
+
+### C
 ```bash
-# 编译
 gcc HelloWorld_c.c -o HelloWorld_c
-# 运行
 ./HelloWorld_c
 ```
 
 ### C++
 ```bash
-# 编译
 g++ HelloWorld_cpp.cpp -o HelloWorld_cpp
-# 运行
 ./HelloWorld_cpp
 ```
 
 ### C#
 ```bash
-# 编译和运行
 dotnet run HelloWorld_cs.cs
 ```
 
 ### Java
 ```bash
-# 编译
 javac HelloWorld_java.java
-# 运行
 java HelloWorld_java
 ```
 
-
 ### Python
 ```bash
-# 运行
 python HelloWorld_py.py
-# 或
+# 或 / または / or
 python3 HelloWorld_py.py
 ```
 
 ### JavaScript
 ```bash
-# 运行
 node HelloWorld_js.js
 ```
 
 ### HTML
-```bash
-# 直接在浏览器中打开index.html文件
-```
+- 直接用浏览器打开 index.html  
+- ブラウザで index.html を開く  
+- Open index.html in your browser
 
-## 主要区别总结
+---
 
-1. **语法复杂度**: HTML < Python < JavaScript < Go < C < C++ < Java < C#
-2. **功能丰富度**: HTML < C < Go < C++ < Java < C# < Python < JavaScript
-3. **学习曲线**: HTML < Python < JavaScript < Go < C < C++ < Java < C#
-4. **应用领域**: 
-   - C: 系统编程、嵌入式
-   - C++: 游戏开发、系统软件
-   - C#: Web开发、桌面应用、游戏开发
-   - Java: 企业级应用、Android开发
-   - Go: 云服务、微服务、系统工具
-   - Python: 数据分析、AI、Web开发
-   - JavaScript: Web前端、Node.js后端
-   - HTML: 网页结构、前端开发
+## 主要区别总结 / 主な違いまとめ / Main Differences
 
-## 优势
-
-✅ **文件名清晰**: 每个文件都有明确的语言标识，不会混淆
-✅ **无冲突**: 编译后的可执行文件不会相互覆盖
-✅ **易识别**: 一眼就能看出是什么语言的程序 
+1. **语法复杂度 / 構文の複雑さ / Syntax Complexity**:  
+   HTML < Python < JavaScript < C < C++ < Java < C#
+2. **功能丰富度 / 機能の豊富さ / Feature Richness**:  
+   HTML < C < C++ < Java < C# < Python < JavaScript
+3. **学习曲线 / 学習曲線 / Learning Curve**:  
+   HTML < Python < JavaScript < C < C++ < Java < C#
+4. **应用领域 / 主な用途 / Main Use Cases**:
+   - **C**: 系统编程、嵌入式  
+     システムプログラミング、組み込み  
+     System programming, embedded
+   - **C++**: 游戏开发、系统软件  
+     ゲーム開発、システムソフトウェア  
+     Game development, system software
+   - **C#**: Web开发、桌面应用、游戏开发  
+     Web開発、デスクトップアプリ、ゲーム開発  
+     Web, desktop, game development
+   - **Java**: 企业级应用、Android开发  
+     エンタープライズアプリ、Android開発  
+     Enterprise apps, Android
+   - **Python**: 数据分析、AI、Web开发  
+     データ分析、AI、Web開発  
+     Data analysis, AI, web
+   - **JavaScript**: Web前端、Node.js后端  
+     Webフロントエンド、Node.jsバックエンド  
+     Web frontend, Node.js backend
+   - **HTML**: 网页结构、前端开发  
+     Webページ構造、フロントエンド開発  
+     Web structure, frontend

@@ -4,6 +4,8 @@ from tkinter import ttk
 from CreateDataBase import create_db
 import DatabaseCommand as db
 
+# 如果没有就会自动作成，有则什么都不做
+# なければ自動で作成し、あれば何もしない
 create_db()
 
 def register():
@@ -35,9 +37,6 @@ def refresh_table():
     for r in db.select_people():
         tree.insert('', tk.END, values=r)
 
-
-
-# UI作成
 root = tk.Tk()
 root.title("人員登録 GUI")
 
