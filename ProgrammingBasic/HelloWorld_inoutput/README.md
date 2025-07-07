@@ -100,13 +100,6 @@ javac HelloWorld_java.java
 java HelloWorld_java
 ```
 
-### Go
-```bash
-# 编译
-go build -o HelloWorld_go HelloWorld_go.go
-# 运行
-./HelloWorld_go
-```
 
 ### Python
 ```bash
