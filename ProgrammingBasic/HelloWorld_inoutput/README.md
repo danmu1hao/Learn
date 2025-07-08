@@ -15,19 +15,19 @@ This project demonstrates Hello World programs in C, C++, C#, HTML, JavaScript, 
 ## 文件说明 / ファイル説明 / File Descriptions
 
 - `HelloWorld_c.c`  
-  C语言 / C言語 / C: C语言版本
+  C
 - `HelloWorld_cpp.cpp`  
-  C++ / C++ / C++: C++版本
+  C++
 - `HelloWorld_cs.cs`  
-  C# / C# / C#: C#版本
+  C#
 - `HelloWorld_java.java`  
-  Java / Java / Java: Java版本
+  Java
 - `HelloWorld_py.py`  
-  Python / Python / Python: Python版本
+  Python
 - `HelloWorld_js.js`  
-  JavaScript / JavaScript / JavaScript: JavaScript版本
+  JavaScript
 - `index.html`  
-  HTML / HTML / HTML: HTML版本
+  HTML
 
 ---
 

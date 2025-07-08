@@ -12,7 +12,9 @@ msg['From'] = mymail  # 送信元
 msg['To'] = to_mail  # 宛先
 
 # SMTPサーバーに接続してメールを送信
-with smtplib.SMTP_SSL('smtpのサーバー', サーバー専用のポート) as server:
+with smtplib.SMTP_SSL('smtpのサーバー', 
+    1 #対象ポート番号　 smtpサーバーにより決める、ネットで調べる
+    ) as server:
     server.login(mymail, mypass)
     server.send_message(msg)
 
