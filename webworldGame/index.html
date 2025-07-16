@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>火堆游戏</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- 火堆区域 -->
+        <div class="fire-area">
+            <div class="fire" id="fire" onclick="handleFireClick()">
+                <span class="emoji">🔥</span>
+                <span class="text">火堆</span>
+            </div>
+        </div>
+        
+        <!-- 木头区域 -->
+        <div class="wood-area">
+            <div class="wood" id="wood1" onclick="handleWoodClick('wood1')">
+                <span class="emoji">🪵</span>
+                <span class="text">木头1</span>
+            </div>
+            <div class="wood" id="wood2" onclick="handleWoodClick('wood2')">
+                <span class="emoji">🪵</span>
+                <span class="text">木头2</span>
+            </div>
+            <div class="wood" id="wood3" onclick="handleWoodClick('wood3')">
+                <span class="emoji">🪵</span>
+                <span class="text">木头3</span>
+            </div>
+            <div class="wood" id="wood4" onclick="handleWoodClick('wood4')">
+                <span class="emoji">🪵</span>
+                <span class="text">木头4</span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

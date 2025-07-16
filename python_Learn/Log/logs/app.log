@@ -1,0 +1,50 @@
+2025-07-15 14:13:46 [CRITICAL] root:40 - UNCAUGHT EXCEPTION
+Traceback (most recent call last):
+  File "c:\Users\h-ryu\Desktop\Learn\python_Learn\Log\test.py", line 2, in <module>
+    print(1/0)
+ZeroDivisionError: division by zero
+2025-07-15 14:13:53 [CRITICAL] root:40 - UNCAUGHT EXCEPTION
+Traceback (most recent call last):
+  File "c:\Users\h-ryu\Desktop\Learn\python_Learn\Log\test.py", line 2, in <module>
+    print(1/0)
+ZeroDivisionError: division by zero
+2025-07-15 14:17:33 [CRITICAL] root:40 - UNCAUGHT EXCEPTION
+Traceback (most recent call last):
+  File "c:\Users\h-ryu\Desktop\Learn\python_Learn\Log\test.py", line 2, in <module>
+    print(1/0)
+ZeroDivisionError: division by zero
+2025-07-15 14:17:47 [CRITICAL] root:40 - UNCAUGHT EXCEPTION
+Traceback (most recent call last):
+  File "c:\Users\h-ryu\Desktop\Learn\python_Learn\Log\test.py", line 2, in <module>
+    print(1/0)
+ZeroDivisionError: division by zero
+2025-07-15 14:17:51 [CRITICAL] root:40 - UNCAUGHT EXCEPTION
+Traceback (most recent call last):
+  File "c:\Users\h-ryu\Desktop\Learn\python_Learn\Log\test.py", line 2, in <module>
+    print(1/0)
+ZeroDivisionError: division by zero
+2025-07-15 14:18:15 [CRITICAL] root:40 - UNCAUGHT EXCEPTION
+Traceback (most recent call last):
+  File "c:\Users\h-ryu\Desktop\Learn\python_Learn\Log\test.py", line 2, in <module>
+    print(1/0)
+ZeroDivisionError: division by zero
+2025-07-15 14:28:52 [CRITICAL] root:40 - UNCAUGHT EXCEPTION
+Traceback (most recent call last):
+  File "c:\Users\h-ryu\Desktop\Learn\python_Learn\Log\test.py", line 2, in <module>
+    print(1/0)
+ZeroDivisionError: division by zero
+2025-07-15 14:45:56 [CRITICAL] root:40 - UNCAUGHT EXCEPTION
+Traceback (most recent call last):
+  File "c:\Users\h-ryu\Desktop\Learn\python_Learn\Log\test.py", line 2, in <module>
+    print(1/0)
+ZeroDivisionError: division by zero
+2025-07-15 17:37:56 [CRITICAL] root:40 - UNCAUGHT EXCEPTION
+Traceback (most recent call last):
+  File "c:\Users\h-ryu\Desktop\Learn\python_Learn\Log\test.py", line 2, in <module>
+    print(1/0)
+ZeroDivisionError: division by zero
+2025-07-15 17:38:23 [CRITICAL] root:40 - UNCAUGHT EXCEPTION
+Traceback (most recent call last):
+  File "c:\Users\h-ryu\Desktop\Learn\python_Learn\Log\test.py", line 2, in <module>
+    print(1/0)
+ZeroDivisionError: division by zero
