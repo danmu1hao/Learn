@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>泡泡连线小游戏 Demo</title>
+  <style>
+    body { margin: 0; background: #222; }
+    canvas { display: block; margin: 0 auto; background: #fff; }
+  </style>
+</head>
+<body>
+<canvas id="bubbleCanvas" width="800" height="600"></canvas>
+<script>
+const canvas = document.getElementById('bubbleCanvas');
+const ctx = canvas.getContext('2d');
+
+const BUBBLE_RADIUS = 25;
+const SPAWN_RADIUS = 100;
+const SPAWN_NUM = 5;
+
+let bubbles = [
+  { x: 400, y: 300, links: [], color: '#4FC3F7' }
+];
+let dragging = null;
+let offsetX = 0, offsetY = 0; // 全局偏移量
+let draggingCanvas = false;
+let lastMouseX, lastMouseY;
+
+// 画泡泡
+function drawBubble(bubble) {
+  ctx.beginPath();
+  ctx.arc(bubble.x + offsetX, bubble.y + offsetY, BUBBLE_RADIUS, 0, Math.PI * 2);
+  ctx.fillStyle = bubble.color;
+  ctx.fill();
+  ctx.strokeStyle = '#1976D2';
+  ctx.lineWidth = 2;
+  ctx.stroke();
+}
+
+// 画所有连线
+function drawLines() {
+  ctx.strokeStyle = '#90CAF9';
+  ctx.lineWidth = 2;
+  for (let i = 0; i < bubbles.length; i++) {
+    let bubble = bubbles[i];
+    for (let link of bubble.links) {
+      ctx.beginPath();
+      ctx.moveTo(bubble.x + offsetX, bubble.y + offsetY);
+      ctx.lineTo(link.x + offsetX, link.y + offsetY);
+      ctx.stroke();
+    }
+  }
+}
+
+// 渲染
+function render() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  drawLines();
+  for (let bubble of bubbles) {
+    drawBubble(bubble);
+  }
+}
+
+// 判断点是否在泡泡内
+function isInBubble(x, y, bubble) {
+  return Math.hypot(x - bubble.x, y - bubble.y) <= BUBBLE_RADIUS;
+}
+
+// 生成新泡泡
+function spawnBubbles(centerBubble) {
+  let angleStep = 2 * Math.PI / SPAWN_NUM;
+  let newBubbles = [];
+  for (let i = 0; i < SPAWN_NUM; i++) {
+    let angle = i * angleStep + Math.random() * angleStep * 0.5; // 随机微调
+    let x = centerBubble.x + SPAWN_RADIUS * Math.cos(angle);
+    let y = centerBubble.y + SPAWN_RADIUS * Math.sin(angle);
+    let color = `hsl(${Math.random()*360},80%,70%)`;
+    let bubble = { x, y, links: [], color };
+    newBubbles.push(bubble);
+    // 互相连线
+    bubble.links.push(centerBubble);
+    centerBubble.links.push(bubble);
+  }
+  bubbles.push(...newBubbles);
+}
+
+// 鼠标事件
+canvas.onmousedown = function(e) {
+  const rect = canvas.getBoundingClientRect();
+  const mx = e.clientX - rect.left;
+  const my = e.clientY - rect.top;
+  for (let bubble of bubbles) {
+    if (isInBubble(mx - offsetX, my - offsetY, bubble)) {
+      dragging = bubble;
+      offsetX = mx - bubble.x;
+      offsetY = my - bubble.y;
+      return;
+    }
+  }
+  if (!dragging) { // 点击在空白处
+    draggingCanvas = true;
+    lastMouseX = e.clientX;
+    lastMouseY = e.clientY;
+  }
+};
+canvas.onmousemove = function(e) {
+  if (dragging) {
+    const rect = canvas.getBoundingClientRect();
+    dragging.x = mx - offsetX - offsetX;
+    dragging.y = my - offsetY - offsetY;
+    render();
+  } else if (draggingCanvas) { // 拖动画布
+    offsetX += e.clientX - lastMouseX;
+    offsetY += e.clientY - lastMouseY;
+    lastMouseX = e.clientX;
+    lastMouseY = e.clientY;
+    render();
+  }
+};
+canvas.onmouseup = function(e) {
+  if (dragging) {
+    dragging = null;
+  }
+  draggingCanvas = false;
+};
+canvas.onclick = function(e) {
+  const rect = canvas.getBoundingClientRect();
+  const mx = e.clientX - rect.left;
+  const my = e.clientY - rect.top;
+  for (let bubble of bubbles) {
+    if (isInBubble(mx, my, bubble)) {
+      spawnBubbles(bubble);
+      render();
+      return;
+    }
+  }
+};
+
+render();
+</script>
+</body>
+</html>
