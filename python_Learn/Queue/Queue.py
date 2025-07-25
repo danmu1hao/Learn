@@ -8,12 +8,15 @@ def producer():
         q.put(i)             # 阻塞直到有空位
         print("生产", i)
 
+# queue内置了一套线程逻辑 put会自带互斥锁 它也允许了多方访问
+
 def consumer():
     while True:
         val = q.get()        # 阻塞直到有数据
         print("消费", val)
         q.task_done()        # 告诉队列已处理完
         time.sleep(1)
+
 
 threading.Thread(target=producer).start()
 threading.Thread(target=consumer, daemon=True).start()
