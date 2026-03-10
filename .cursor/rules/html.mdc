@@ -1,0 +1,7 @@
+---
+description:
+这个用来定义一些html的规范
+globs:
+alwaysApply: false
+---
+在写html的时候希望你不要采用都包含在一个html的写法，尽可能分出css，js和html文件
